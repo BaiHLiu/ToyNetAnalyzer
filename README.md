@@ -2,7 +2,7 @@
 
 > *玩具型*分布式网络抓包和安全分析系统，我在 UCAS《网络攻防基础》课程上的实验。用于在分布式环境中捕获和分析网络数据包，实现了一些洞察和安全检测能力。
 
-[![fig1](./figs/fig1.png)](https://github.com/BaiHLiu/ToyNetAnalyzer/blob/main/figs/fig1.png)
+![fig1](https://raw.githubusercontent.com/BaiHLiu/ToyNetAnalyzer/refs/heads/main/figs/fig1.png)
 
 外表看起来花里胡哨，但实际用起来也算可用(?)🤣 在 OpenWrt 路由器上尝试部署了一下，除了内存占用比较大，运行还算稳定。代码 AI 含量较大，请仔细甄别。
 
@@ -12,6 +12,8 @@
 - **安全检测**：插件化的检测模块支持，内置示例的 SQL 注入检测模块。
 - **SNI 检测**：支持对 HTTPS 流量基于 TLS 握手信息的 SNI 识别，从而识别用户访问的域名。
 - **数据存储与可视化**：数据结构化后存储在 ElasticSearch 中，便于检索。利用 Kibana 创建了较为直观的仪表盘，用于监控网络流量趋势和统计信息。
+
+![fig2](https://raw.githubusercontent.com/BaiHLiu/ToyNetAnalyzer/refs/heads/main/figs/fig2.png)
 
 ## 技术实现
 - **采集端实现**：采集端使用 Python 的 scapy 库构建，依赖 libpcap 或 npcap 进行数据包捕获。将捕获的数据包转换为 JSON 格式后发送到 RabbitMQ 消息队列。
